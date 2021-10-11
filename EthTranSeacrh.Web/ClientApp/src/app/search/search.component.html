@@ -1,0 +1,54 @@
+<h1 id="tableLabel">Found Transactions</h1>
+
+<p>Find the transaction based on block number and the address</p>
+<div class="border rounded pl-3">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group mb-2">
+        <label class="mr-2">Block Number</label>
+        <input type="text" numbersOnly class="form-control" [(ngModel)]="blockNumber" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group mx-sm-3 mb-2">
+        <label class="mr-2">Address</label>
+        <input type="text" class="form-control" [(ngModel)]="address" />
+      </div>
+    </div>
+
+  </div>
+<div class="row">
+  <button (click)="find()" type="submit" class="btn btn-primary w-25 mb-2 ml-3 float-right">Find</button>
+  </div>
+  </div>
+
+
+<p *ngIf="isWorking"><app-spinner></app-spinner></p>
+<div style="width: auto; height: auto;  overflow: scroll;">
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="transactions">
+    <thead>
+    <tr>
+      <th>Block Hash</th>
+      <th>Block Number</th>
+      <th>Gas</th>
+      <th>Hash</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{ transaction.blockHash }}</td>
+      <td>{{ transaction.blockNumber }}</td>
+      <td>{{ transaction.gas }}</td>
+      <td>{{ transaction.hash }}</td>
+      <td>{{ transaction.from }}</td>
+      <td>{{ transaction.to }}</td>
+      <td>{{ transaction.value }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
