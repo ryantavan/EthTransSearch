@@ -13,3 +13,4 @@
 * It would be useful to have signalr to show the progress bar of how the search is going on. 
 * I could do some validation for the entries however I should learn about the different data types to make this possible
 * Also we can add some caching around the search if it is likely to be searched again (Not sure if the block transactions can change)
+* please replace the projectId with the correct one, I masked that in this source control because it is publicly accessible.
